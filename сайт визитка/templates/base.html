@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Сайт-визитка{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<header>
+    <div class="navbar">
+        <div class="logo">Никита Прохоров</div>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}" class="{% if active_page == 'index' %}active{% endif %}">Главная</a></li>
+                <li><a href="{{ url_for('about') }}" class="{% if active_page == 'about' %}active{% endif %}">Обо мне</a></li>
+                <li><a href="{{ url_for('contacts') }}" class="{% if active_page == 'contacts' %}active{% endif %}">Контакты</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="main-wrapper">
+    {% block content %}{% endblock %}
+</main>
+
+<footer>
+    © 2025 Никита Прохоров.
+</footer>
+</body>
+</html>

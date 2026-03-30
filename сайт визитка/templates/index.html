@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Главная – Никита Прохоров{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div>
+        <h1 class="hero-title">Привет! Я Никита Прохоров</h1>
+        <p class="hero-subtitle">
+            Я студент УлГТУ. Учусь на ФИСТе на направлении ИСТ. В свободное от учебы время стараюсь развивать свои навыки в Программировании.
+        </p>
+        <div class="hero-tags">
+            <span class="tag">HTML / CSS</span>
+            <span class="tag">Python</span>
+            <span class="tag">Учусь и развиваюсь</span>
+        </div>
+    </div>
+
+    <div class="hero-photo">
+        <img src="{{ url_for('static', filename='images/me.jpg') }}" alt="Моё фото">
+    </div>
+</section>
+
+<section>
+    <h2 class="section-title">Чем могу быть полезен</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Разработка сайтов</h3>
+            <p>Могу написать простой сайт, стараясь отвечать требованиям.</p>
+        </div>
+        <div class="card">
+            <h3>Программирование</h3>
+            <p>Могу разрабатывать приложения среднего уровня, используя разные модули и функции.</p>
+        </div>
+        <div class="card">
+            <h3>Интересы</h3>
+            <p>Мне нравится развиваться и общаться с друзьями.</p>
+        </div>
+    </div>
+</section>
+{% endblock %}

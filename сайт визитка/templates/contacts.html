@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Контакты – Никита Прохоров{% endblock %}
+
+{% block content %}
+<h1 class="section-title">Связаться со мной</h1>
+
+<div class="card">
+    <div class="contacts-list">
+        <p>Email: <strong>nik123456p@mail.ru</strong></p>
+        <p>Telegram: <strong>@Maple_Minazuki</strong></p>
+        <p>GitHub: <strong>github.com/prohor-n</strong></p>
+    </div>
+
+    <form class="contact-form" action="{{ url_for('contacts') }}" method="post">
+        <label>Имя</label>
+        <input type="text" name="name" placeholder="Ваше имя">
+
+        <label>Email</label>
+        <input type="email" name="email" placeholder="Ваш email">
+
+        <label>Сообщение</label>
+        <textarea rows="4" name="message" placeholder="Ваше сообщение"></textarea>
+
+        <button type="submit">Отправить</button>
+    </form>
+
+{% if success %}
+    <p style="margin-top:10px; color:#22c55e;">Сообщение сохранено в файл.</p>
+{% endif %}
+</div>
+{% endblock %}
